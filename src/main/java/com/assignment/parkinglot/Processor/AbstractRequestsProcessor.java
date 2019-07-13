@@ -3,8 +3,8 @@ package com.assignment.parkinglot.Processor;
 import com.assignment.parkinglot.parkinglotservice.ParkingLotService;
 
 public interface AbstractRequestsProcessor {
-  public void setService(ParkingLotService parkingLotService);
+  //public void setService(ParkingLotService parkingLotService);
 
-  public void execute(String action);
+  public void processRequest(String action);
 
 }

@@ -17,7 +17,7 @@ public class ParkingDataStructure <T extends Vehicle> implements AbstractParking
 
   private static ParkingDataStructure parkingDataStructure = null;
 
-  public static <T extends Vehicle> ParkingDataStructure<T> ParkingDataStructure(int capacity) {
+  public static <T extends Vehicle> ParkingDataStructure<T> getInstance(int capacity) {
     if (parkingDataStructure == null) {
       parkingDataStructure = new ParkingDataStructure(capacity);
     }
@@ -107,11 +107,6 @@ public class ParkingDataStructure <T extends Vehicle> implements AbstractParking
     }
     return lotStats;
   }
-
-
-
-
-
 
 }
 
