@@ -6,7 +6,7 @@ public abstract class Vehicle {
 
   public Vehicle(String registration_number, String color){
     this.registration_number = registration_number;
-    this.color = color;
+    this.color = color.toLowerCase();
   }
   public String getRegistration_number() {
     return this.registration_number;

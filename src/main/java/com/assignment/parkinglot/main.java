@@ -40,7 +40,7 @@ public class main {
               }
               else
               {
-                if (isCommandValid(inputCommand))
+                if (processor.isCommandValid(inputCommand))
                 {
                   try
                   {
@@ -73,7 +73,7 @@ public class main {
             while ((inputCommand = bufferReader.readLine()) != null)
             {
               inputCommand = inputCommand.trim();
-              if (isCommandValid(inputCommand))
+              if (processor.isCommandValid(inputCommand))
               {
                 try
                 {
@@ -113,36 +113,5 @@ public class main {
     System.out.println("5) registration_numbers_for_cars_with_color <car_color> -> get reg no for cars of a particular color ");
     System.out.println("6) slot_numbers_for_cars_with_color <car_color> -> get slot nos for cars with a particular color");
     System.out.println("7) slot_number_for_registration_number <registration no> -> get slot no for a car using its reg no");
-  }
-
-  private static boolean isCommandValid(String inputString){
-    boolean valid = true;
-    try
-    {
-      String[] inputs = inputString.split(" ");
-      int params = CliMap.getMap().get(inputs[0]);
-      switch (inputs.length)
-      {
-        case 1:
-          if (params != 0) // e.g status -> inputs = 1
-            valid = false;
-          break;
-        case 2:
-          if (params != 1) // create_parking_lot 6 -> inputs = 2
-            valid = false;
-          break;
-        case 3:
-          if (params != 2) // park KA-01-P-333 White -> inputs = 3
-            valid = false;
-          break;
-        default:
-          valid = false;
-      }
-    }
-    catch (Exception e)
-    {
-      valid = false;
-    }
-    return valid;
   }
 }

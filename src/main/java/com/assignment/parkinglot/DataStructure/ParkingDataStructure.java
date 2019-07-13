@@ -6,6 +6,7 @@ import com.assignment.parkinglot.interaction.Constants;
 import com.assignment.parkinglot.objectmodels.Vehicle;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -28,9 +29,10 @@ public class ParkingDataStructure <T extends Vehicle> implements AbstractParking
     this.capacity=capacity;
     this.numFreeSlots=capacity;
     this.lotManager = new LotManager();
-    for (int i=0;i<=this.capacity;i++){
-      this.slotVehicleMapping.put(i,null);
-
+    slotVehicleMapping = new HashMap<>();
+    for (int i=1;i<=this.capacity;i++){
+      slotVehicleMapping.put(i,null);
+      lotManager.addSlot(i);
     }
   }
 

@@ -1,6 +1,7 @@
 package com.assignment.parkinglot.Processor;
 
 import com.assignment.parkinglot.interaction.Constants;
+import com.assignment.parkinglot.objectmodels.car;
 import com.assignment.parkinglot.parkinglotservice.ParkingLotService;
 
 public class RequestProcessor implements AbstractRequestsProcessor {
@@ -20,6 +21,9 @@ public class RequestProcessor implements AbstractRequestsProcessor {
 
         }
         break;
+      case Constants.PARK:
+          parkingLotService.park(new car(params[1],params[2]));
+          break;
       case Constants.LEAVE:
         try{
           parkingLotService.leave(Integer.parseInt(params[1]));
@@ -29,13 +33,13 @@ public class RequestProcessor implements AbstractRequestsProcessor {
         }
         break;
       case Constants.REG_NUMBER_FOR_CARS_WITH_COLOR:
-        parkingLotService.getRegistrationNumberFromColor(params[1]);
+        System.out.println(parkingLotService.getRegistrationNumberFromColor(params[1]));
         break;
       case Constants.SLOTS_NUMBER_FOR_CARS_WITH_COLOR:
-        parkingLotService.getSlotNumbersFromColor(params[1]);
+        System.out.println(parkingLotService.getSlotNumbersFromColor(params[1]));
         break;
       case Constants.SLOTS_NUMBER_FOR_REG_NUMBER:
-        parkingLotService.getSlotNumberFromRegistrationNo(params[1]);
+        System.out.println(parkingLotService.getSlotNumberFromRegistrationNo(params[1]));
         break;
         default:
           break;

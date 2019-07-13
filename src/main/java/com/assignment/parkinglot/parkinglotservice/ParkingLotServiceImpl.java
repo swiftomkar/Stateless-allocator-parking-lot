@@ -70,7 +70,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
     List<String> RegNoList = new ArrayList<String>();
     if (isLotValid()){
        try{
-         RegNoList = data.getRegNumberForColor(color);
+         RegNoList = data.getRegNumberForColor(color.toLowerCase());
        }
        catch (Exception e){
        }
@@ -82,7 +82,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
     List<Integer> slotsWithAColor = new ArrayList<Integer>();
     if (isLotValid()){
       try{
-        slotsWithAColor=data.getSlotNumbersFromColor(color);
+        slotsWithAColor=data.getSlotNumbersFromColor(color.toLowerCase());
       }
       catch (Exception e){
       }
@@ -104,7 +104,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
   }
 
   private boolean isLotValid(){
-    return data==null;
+    return data!=null;
   }
 
 }
