@@ -38,7 +38,4 @@ public class ParkingLotServiceImpl implements ParkingLotService {
     return data==null;
   }
 
-
-
-
 }
