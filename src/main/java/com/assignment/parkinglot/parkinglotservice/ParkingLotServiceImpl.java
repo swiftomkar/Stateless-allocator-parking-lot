@@ -2,7 +2,6 @@ package com.assignment.parkinglot.parkinglotservice;
 
 import com.assignment.parkinglot.DataStructure.AbstractParkingDataStructure;
 import com.assignment.parkinglot.DataStructure.ParkingDataStructure;
-import com.assignment.parkinglot.LotManager.AbstractLotManager;
 import com.assignment.parkinglot.interaction.Constants;
 import com.assignment.parkinglot.objectmodels.Vehicle;
 
