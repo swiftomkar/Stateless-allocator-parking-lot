@@ -4,7 +4,10 @@ import com.assignment.parkinglot.interaction.Constants;
 import com.assignment.parkinglot.objectmodels.car;
 import com.assignment.parkinglot.parkinglotservice.ParkingLotService;
 
+import java.util.logging.Logger;
+
 public class RequestProcessor implements AbstractRequestsProcessor {
+  private final static Logger logger = Logger.getLogger("logger");
   private ParkingLotService parkingLotService;
   public void setService(ParkingLotService parkingLotService){
     this.parkingLotService = parkingLotService;
@@ -18,7 +21,7 @@ public class RequestProcessor implements AbstractRequestsProcessor {
           parkingLotService.instantiateParkingLot(Integer.parseInt(params[1]));
         }
         catch (Exception e){
-
+          logger.info(e.toString());
         }
         break;
       case Constants.PARK:
@@ -29,7 +32,7 @@ public class RequestProcessor implements AbstractRequestsProcessor {
           parkingLotService.leave(Integer.parseInt(params[1]));
         }
         catch (Exception e){
-
+          logger.info(e.toString());
         }
         break;
       case Constants.REG_NUMBER_FOR_CARS_WITH_COLOR:

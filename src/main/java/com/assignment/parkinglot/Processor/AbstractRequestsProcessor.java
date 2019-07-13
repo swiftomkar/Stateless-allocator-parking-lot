@@ -10,7 +10,6 @@ public interface AbstractRequestsProcessor {
 
   public default boolean isCommandValid(String inputString)
   {
-    // Split the input string to validate command and input value
     boolean valid = true;
     try
     {
@@ -19,15 +18,15 @@ public interface AbstractRequestsProcessor {
       switch (inputs.length)
       {
         case 1:
-          if (params != 0) // e.g status -> inputs = 1
+          if (params != 0)
             valid = false;
           break;
         case 2:
-          if (params != 1) // create_parking_lot 6 -> inputs = 2
+          if (params != 1)
             valid = false;
           break;
         case 3:
-          if (params != 2) // park KA-01-P-333 White -> inputs = 3
+          if (params != 2)
             valid = false;
           break;
         default:

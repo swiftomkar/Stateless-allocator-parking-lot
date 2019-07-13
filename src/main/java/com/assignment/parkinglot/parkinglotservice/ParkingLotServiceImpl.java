@@ -16,6 +16,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
 
   public void instantiateParkingLot (int capacity) {
     if (data!=null){
+      System.out.println("Parking lot already exists");
       return;
     }
     this.data= ParkingDataStructure.getInstance(capacity);
@@ -36,6 +37,9 @@ public class ParkingLotServiceImpl implements ParkingLotService {
         logger.info(e.toString());
       }
     }
+    else{
+      System.out.println("No valid Parking Lot");
+    }
   }
 
   public void leave (int slotNo){
@@ -51,6 +55,9 @@ public class ParkingLotServiceImpl implements ParkingLotService {
       catch (Exception e){
         logger.info(e.toString());
       }
+    }
+    else{
+      System.out.println("No valid Parking Lot, use create_parking_lot");
     }
   }
 
@@ -75,6 +82,9 @@ public class ParkingLotServiceImpl implements ParkingLotService {
        catch (Exception e){
        }
      }
+    else{
+      System.out.println("No valid Parking Lot, use create_parking_lot");
+    }
      return RegNoList;
   }
 
@@ -86,6 +96,9 @@ public class ParkingLotServiceImpl implements ParkingLotService {
       }
       catch (Exception e){
       }
+    }
+    else{
+      System.out.println("No valid Parking Lot, use create_parking_lot");
     }
     return slotsWithAColor;
   }
@@ -99,6 +112,9 @@ public class ParkingLotServiceImpl implements ParkingLotService {
       catch (Exception e){
 
       }
+    }
+    else{
+      System.out.println("No valid Parking Lot, use create_parking_lot");
     }
     return value;
   }
