@@ -1,0 +1,17 @@
+.mvn/
+.checkstyle
+.classpath
+.project
+.settings/
+target/
+.idea/
+*.pyc
+*.iml
+.factorypath
+config.json
+application.properties
+application.yml
+schema-registry/src/main/resources/static/
+schema-registry/src/main/ui/node_modules/
+venv*
+/.metadata/
