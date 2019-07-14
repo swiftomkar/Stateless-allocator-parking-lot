@@ -69,7 +69,7 @@ public class main {
           }
           break;
         }
-        case 1:// File input/output
+        case 1:// File input
         {
           File inputFile = new File(args[0]);
           try

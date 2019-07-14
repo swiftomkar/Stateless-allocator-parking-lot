@@ -125,8 +125,4 @@ public class mainTest {
         "1\t\t\tab12\t\t\t\twhite\n"+
         "2\t\t\tab13\t\t\t\twhite\n",byteArrayOutputStream.toString());
   }
-
-  @Test
-  public
-
 }

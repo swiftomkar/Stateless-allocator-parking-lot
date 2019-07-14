@@ -39,12 +39,18 @@ public class RequestProcessor implements AbstractRequestsProcessor {
         break;
       case Constants.REG_NUMBER_FOR_CARS_WITH_COLOR:
         List<String> regNos=parkingLotService.getRegistrationNumberFromColor(params[1]);
+        if (regNos.size()==0){
+          System.out.println("Not found");
+        }
         for (String regNo:regNos){
           System.out.print(regNo+", ");
         }
         break;
       case Constants.SLOTS_NUMBER_FOR_CARS_WITH_COLOR:
         List<Integer> slots = parkingLotService.getSlotNumbersFromColor(params[1]);
+        if (slots.size()==0){
+          System.out.println("Not found");
+        }
         for (Integer slot:slots){
           System.out.print(slot+", ");
         }
