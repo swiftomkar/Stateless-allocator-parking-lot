@@ -21,4 +21,7 @@ public interface ParkingLotService {
   public List<Integer> getSlotNumbersFromColor (String color);
 
   public int getSlotNumberFromRegistrationNo (String registrationNumber);
-}
+
+  public void getLotStats();
+
+  }

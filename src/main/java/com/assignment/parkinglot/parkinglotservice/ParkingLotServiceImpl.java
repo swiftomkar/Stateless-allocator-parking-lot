@@ -20,18 +20,18 @@ public class ParkingLotServiceImpl implements ParkingLotService {
       return;
     }
     this.data= ParkingDataStructure.getInstance(capacity);
-    System.out.println("Parking lot with capacity "+capacity );
+    System.out.println("Created a parking lot with " + capacity +" slots" );
   }
   public void park (Vehicle vehicle){
     if (isLotValid()) {
       try {
-        int value = data.parkCar(vehicle);
-        if (value == Constants.NOT_AVAILABLE) {
-          System.out.println("Parking full, sorry!");
-        } else if (value == Constants.VEHICLE_ALREADY_EXIST) {
+        int slot = data.parkCar(vehicle);
+        if (slot == Constants.NOT_AVAILABLE) {
+          System.out.println("Sorry, parking lot is full");
+        } else if (slot == Constants.VEHICLE_ALREADY_EXIST) {
           System.out.println("this car is already parked! don't park a parked car!");
         } else {
-          System.out.println("car" + vehicle.getRegistration_number() + " parked at slot " + value);
+          System.out.println("Allocated slot number: "+ slot);
         }
       } catch (Exception e) {
         logger.info(e.toString());
@@ -46,7 +46,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
     if (isLotValid()){
       try{
         if (data.leave(slotNo)){
-          System.out.println("Slot" + slotNo + " is free");
+          System.out.println("Slot number " + slotNo + " is free");
         }
         else{
           System.out.println("No car was parked here");
@@ -71,6 +71,14 @@ public class ParkingLotServiceImpl implements ParkingLotService {
       }
     }
     return 0;
+  }
+
+  public void getLotStats(){
+    List<List<String>> stats=data.getLotStats();
+    System.out.println("Slot No.\tRegistration No\t\tColour");
+    for (List<String> var: stats){
+      System.out.println(var.get(0)+"\t\t\t"+var.get(1)+"\t\t\t\t"+var.get(2));
+    }
   }
 
   public List<String> getRegistrationNumberFromColor (String color){

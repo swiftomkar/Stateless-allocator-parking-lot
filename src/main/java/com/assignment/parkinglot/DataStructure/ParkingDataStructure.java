@@ -99,12 +99,16 @@ public class ParkingDataStructure <T extends Vehicle> implements AbstractParking
     return numFreeSlots;
   }
 
-  public List<String> getLotStats(){
-    List<String> lotStats = new ArrayList<String>();
+  public List<List<String>> getLotStats(){
+    List<List<String>> lotStats = new ArrayList<>();
     for(int i=1; i<=capacity;i++){
       Vehicle vehicle = slotVehicleMapping.get(i);
       if (vehicle!=null){
-        lotStats.add("slot No:" + i + "RegNo:" + vehicle.getRegistration_number() + "color:" + vehicle.getColor());
+        List<String> stat=new ArrayList<>();
+        stat.add(Integer.toString(i));
+        stat.add(vehicle.getRegistration_number());
+        stat.add(vehicle.getColor());
+        lotStats.add(stat);
       }
     }
     return lotStats;

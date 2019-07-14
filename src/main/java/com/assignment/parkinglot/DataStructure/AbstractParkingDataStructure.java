@@ -10,7 +10,7 @@ public interface AbstractParkingDataStructure<T extends Vehicle> {
 
   public boolean leave(int slot);
 
-  public List<String> getLotStats();
+  public List<List<String>> getLotStats();
 
   public List<String> getRegNumberForColor(String color);
 
