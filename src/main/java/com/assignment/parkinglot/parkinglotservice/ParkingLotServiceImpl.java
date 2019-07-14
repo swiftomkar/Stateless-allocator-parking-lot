@@ -7,6 +7,7 @@ import com.assignment.parkinglot.objectmodels.Vehicle;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ParkingLotServiceImpl implements ParkingLotService {
@@ -34,7 +35,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
           System.out.println("Allocated slot number: "+ slot);
         }
       } catch (Exception e) {
-        logger.info(e.toString());
+        logger.log(Level.WARNING,e.toString());
       }
     }
     else{
@@ -53,7 +54,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
         }
       }
       catch (Exception e){
-        logger.info(e.toString());
+        logger.log(Level.WARNING,e.toString());
       }
     }
     else{
@@ -67,7 +68,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
         int value = data.getNumFreeSlots();
         return value;
       } catch (Exception e) {
-        logger.info(e.toString());
+        logger.log(Level.WARNING,e.toString());
       }
     }
     return 0;
@@ -88,6 +89,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
          RegNoList = data.getRegNumberForColor(color.toLowerCase());
        }
        catch (Exception e){
+         logger.log(Level.WARNING,e.toString());
        }
      }
     else{
@@ -103,6 +105,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
         slotsWithAColor=data.getSlotNumbersFromColor(color.toLowerCase());
       }
       catch (Exception e){
+        logger.log(Level.WARNING,e.toString());
       }
     }
     else{
@@ -118,7 +121,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
         value = data.getSlotNoFromRegistrationNo(registrationNumber);
       }
       catch (Exception e){
-
+        logger.log(Level.WARNING,e.toString());
       }
     }
     else{

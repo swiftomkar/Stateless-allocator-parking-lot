@@ -5,6 +5,7 @@ import com.assignment.parkinglot.objectmodels.car;
 import com.assignment.parkinglot.parkinglotservice.ParkingLotService;
 
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class RequestProcessor implements AbstractRequestsProcessor {
@@ -33,7 +34,7 @@ public class RequestProcessor implements AbstractRequestsProcessor {
           parkingLotService.leave(Integer.parseInt(params[1]));
         }
         catch (Exception e){
-          logger.info(e.toString());
+          logger.log(Level.WARNING,e.toString());
         }
         break;
       case Constants.REG_NUMBER_FOR_CARS_WITH_COLOR:

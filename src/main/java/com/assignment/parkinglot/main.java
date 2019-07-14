@@ -9,9 +9,11 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.InputStreamReader;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class main {
+  private final static Logger logger = Logger.getLogger("logger");
   public static void main(String [] args) {
     System.out.println("main run");
     AbstractRequestsProcessor processor = new RequestProcessor();
@@ -49,7 +51,8 @@ public class main {
                   }
                   catch (Exception e)
                   {
-                    System.out.println(e.getMessage());
+                    logger.log(Level.WARNING,e.toString());
+
                   }
                 }
                 else
@@ -60,6 +63,8 @@ public class main {
             }
             catch (Exception e)
             {
+              logger.log(Level.WARNING,e.toString());
+
             }
           }
           break;
@@ -82,7 +87,7 @@ public class main {
                 }
                 catch (Exception e)
                 {
-                  System.out.println(e.getMessage());
+                  logger.log(Level.WARNING,e.toString());
                 }
               }
               else
@@ -92,6 +97,8 @@ public class main {
           }
           catch (Exception e)
           {
+            logger.log(Level.WARNING,e.toString());
+
           }
           break;
         }
@@ -101,6 +108,7 @@ public class main {
       }
     }
     catch (Exception e){
+      logger.log(Level.WARNING,e.toString());
 
     }
   }
