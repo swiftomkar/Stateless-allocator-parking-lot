@@ -114,5 +114,13 @@ public class ParkingDataStructure <T extends Vehicle> implements AbstractParking
     return lotStats;
   }
 
+  public void delete(){
+    this.capacity=0;
+    this.lotManager=null;
+    this.numFreeSlots=0;
+    slotVehicleMapping=null;
+    parkingDataStructure=null;
+  }
+
 }
 

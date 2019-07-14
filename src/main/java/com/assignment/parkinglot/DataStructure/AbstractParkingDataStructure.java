@@ -20,5 +20,7 @@ public interface AbstractParkingDataStructure<T extends Vehicle> {
 
   public int getNumFreeSlots();
 
+  public void delete();
+
 
 }

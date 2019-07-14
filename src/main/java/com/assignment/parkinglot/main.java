@@ -119,8 +119,8 @@ public class main {
     System.out.println("2) park <car registration no> <color> -> park a car");
     System.out.println("3) leave <slot no> -> remove car from lot");
     System.out.println("4) status -> get lot status");
-    System.out.println("5) registration_numbers_for_cars_with_color <car_color> -> get reg no for cars of a particular color ");
-    System.out.println("6) slot_numbers_for_cars_with_color <car_color> -> get slot nos for cars with a particular color");
+    System.out.println("5) registration_numbers_for_cars_with_colour <car_color> -> get reg no for cars of a particular color ");
+    System.out.println("6) slot_numbers_for_cars_with_colour <car_color> -> get slot nos for cars with a particular color");
     System.out.println("7) slot_number_for_registration_number <registration no> -> get slot no for a car using its reg no");
   }
 }

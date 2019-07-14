@@ -114,7 +114,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
     return slotsWithAColor;
   }
 
-  public int getSlotNumberFromRegistrationNo (String registrationNumber){
+  public String getSlotNumberFromRegistrationNo (String registrationNumber){
     int value = -1;
     if(isLotValid()){
       try{
@@ -127,11 +127,20 @@ public class ParkingLotServiceImpl implements ParkingLotService {
     else{
       System.out.println("No valid Parking Lot, use create_parking_lot");
     }
-    return value;
+    if (value==-1){
+      return "Not found";
+    }
+    return Integer.toString(value);
   }
 
   private boolean isLotValid(){
     return data!=null;
+  }
+
+  public void delete(){
+    if (data!=null){
+      data.delete();
+    }
   }
 
 }

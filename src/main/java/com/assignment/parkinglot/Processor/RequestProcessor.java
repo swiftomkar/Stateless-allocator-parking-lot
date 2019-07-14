@@ -45,6 +45,7 @@ public class RequestProcessor implements AbstractRequestsProcessor {
         for (String regNo:regNos){
           System.out.print(regNo+", ");
         }
+        System.out.println("\n");
         break;
       case Constants.SLOTS_NUMBER_FOR_CARS_WITH_COLOR:
         List<Integer> slots = parkingLotService.getSlotNumbersFromColor(params[1]);
@@ -54,6 +55,7 @@ public class RequestProcessor implements AbstractRequestsProcessor {
         for (Integer slot:slots){
           System.out.print(slot+", ");
         }
+        System.out.println("\n");
         break;
       case Constants.SLOTS_NUMBER_FOR_REG_NUMBER:
         System.out.println(parkingLotService.getSlotNumberFromRegistrationNo(params[1]));
